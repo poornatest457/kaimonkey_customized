@@ -7,6 +7,7 @@ resource "aws_db_subnet_group" "km_rds_subnet_grp" {
   })
 }
 
+
 resource "aws_security_group" "km_rds_sg" {
   name   = "km_rds_sg"
   vpc_id = var.vpc_id
@@ -15,6 +16,7 @@ resource "aws_security_group" "km_rds_sg" {
     Name = "km_rds_sg_${var.environment}"
   })
 
+  
   # HTTP access from anywhere
   ingress {
     from_port   = 5432
