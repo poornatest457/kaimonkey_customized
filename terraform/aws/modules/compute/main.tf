@@ -78,6 +78,7 @@ resource "aws_ecs_cluster" "km_ecs_cluster" {
   })
 }
 
+
 resource "aws_ecs_task_definition" "km_ecs_task" {
   family                   = "km_ecs_task_${var.environment}"
   container_definitions    = data.template_file.km_ecs_template.rendered
